@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -30,28 +29,16 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final Button btnNext;
 
   @NonNull
-  public final CardView cardView;
-
-  @NonNull
-  public final CardView cardView1;
-
-  @NonNull
   public final ConstraintLayout constraintLayout;
 
   @NonNull
   public final ConstraintLayout constraintLayout2;
 
   @NonNull
-  public final ConstraintLayout constraintLayout3;
-
-  @NonNull
   public final EditText editTextTextPassword;
 
   @NonNull
   public final EditText editTextTextPassword1;
-
-  @NonNull
-  public final ImageView imgProfile;
 
   @NonNull
   public final TextView textView1;
@@ -63,51 +50,29 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextView textView3;
 
   @NonNull
-  public final TextView textView4;
-
-  @NonNull
   public final TextView textView5;
-
-  @NonNull
-  public final TextView textView6;
 
   @NonNull
   public final TextView textView8;
 
-  @NonNull
-  public final View view;
-
-  @NonNull
-  public final View view1;
-
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnBack,
-      @NonNull Button btnNext, @NonNull CardView cardView, @NonNull CardView cardView1,
-      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout2,
-      @NonNull ConstraintLayout constraintLayout3, @NonNull EditText editTextTextPassword,
-      @NonNull EditText editTextTextPassword1, @NonNull ImageView imgProfile,
-      @NonNull TextView textView1, @NonNull TextView textView2, @NonNull TextView textView3,
-      @NonNull TextView textView4, @NonNull TextView textView5, @NonNull TextView textView6,
-      @NonNull TextView textView8, @NonNull View view, @NonNull View view1) {
+      @NonNull Button btnNext, @NonNull ConstraintLayout constraintLayout,
+      @NonNull ConstraintLayout constraintLayout2, @NonNull EditText editTextTextPassword,
+      @NonNull EditText editTextTextPassword1, @NonNull TextView textView1,
+      @NonNull TextView textView2, @NonNull TextView textView3, @NonNull TextView textView5,
+      @NonNull TextView textView8) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnNext = btnNext;
-    this.cardView = cardView;
-    this.cardView1 = cardView1;
     this.constraintLayout = constraintLayout;
     this.constraintLayout2 = constraintLayout2;
-    this.constraintLayout3 = constraintLayout3;
     this.editTextTextPassword = editTextTextPassword;
     this.editTextTextPassword1 = editTextTextPassword1;
-    this.imgProfile = imgProfile;
     this.textView1 = textView1;
     this.textView2 = textView2;
     this.textView3 = textView3;
-    this.textView4 = textView4;
     this.textView5 = textView5;
-    this.textView6 = textView6;
     this.textView8 = textView8;
-    this.view = view;
-    this.view1 = view1;
   }
 
   @Override
@@ -149,18 +114,6 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.cardView;
-      CardView cardView = ViewBindings.findChildViewById(rootView, id);
-      if (cardView == null) {
-        break missingId;
-      }
-
-      id = R.id.cardView1;
-      CardView cardView1 = ViewBindings.findChildViewById(rootView, id);
-      if (cardView1 == null) {
-        break missingId;
-      }
-
       id = R.id.constraintLayout;
       ConstraintLayout constraintLayout = ViewBindings.findChildViewById(rootView, id);
       if (constraintLayout == null) {
@@ -173,12 +126,6 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.constraintLayout3;
-      ConstraintLayout constraintLayout3 = ViewBindings.findChildViewById(rootView, id);
-      if (constraintLayout3 == null) {
-        break missingId;
-      }
-
       id = R.id.editTextTextPassword;
       EditText editTextTextPassword = ViewBindings.findChildViewById(rootView, id);
       if (editTextTextPassword == null) {
@@ -188,12 +135,6 @@ public final class ActivityLoginBinding implements ViewBinding {
       id = R.id.editTextTextPassword1;
       EditText editTextTextPassword1 = ViewBindings.findChildViewById(rootView, id);
       if (editTextTextPassword1 == null) {
-        break missingId;
-      }
-
-      id = R.id.imgProfile;
-      ImageView imgProfile = ViewBindings.findChildViewById(rootView, id);
-      if (imgProfile == null) {
         break missingId;
       }
 
@@ -215,21 +156,9 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView4;
-      TextView textView4 = ViewBindings.findChildViewById(rootView, id);
-      if (textView4 == null) {
-        break missingId;
-      }
-
       id = R.id.textView5;
       TextView textView5 = ViewBindings.findChildViewById(rootView, id);
       if (textView5 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView6;
-      TextView textView6 = ViewBindings.findChildViewById(rootView, id);
-      if (textView6 == null) {
         break missingId;
       }
 
@@ -239,22 +168,9 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.view;
-      View view = ViewBindings.findChildViewById(rootView, id);
-      if (view == null) {
-        break missingId;
-      }
-
-      id = R.id.view1;
-      View view1 = ViewBindings.findChildViewById(rootView, id);
-      if (view1 == null) {
-        break missingId;
-      }
-
-      return new ActivityLoginBinding((ConstraintLayout) rootView, btnBack, btnNext, cardView,
-          cardView1, constraintLayout, constraintLayout2, constraintLayout3, editTextTextPassword,
-          editTextTextPassword1, imgProfile, textView1, textView2, textView3, textView4, textView5,
-          textView6, textView8, view, view1);
+      return new ActivityLoginBinding((ConstraintLayout) rootView, btnBack, btnNext,
+          constraintLayout, constraintLayout2, editTextTextPassword, editTextTextPassword1,
+          textView1, textView2, textView3, textView5, textView8);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

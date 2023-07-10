@@ -3218,8 +3218,6 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
-id cardView
-id cardView1
 id carryVelocity
 id center
 id centerCrop
@@ -3244,7 +3242,6 @@ id confirm_button
 id constraint
 id constraintLayout
 id constraintLayout2
-id constraintLayout3
 id constraintLayout4
 id constraintLayout5
 id container
@@ -3609,9 +3606,7 @@ id textView2
 id textView20
 id textView3
 id textView30
-id textView4
 id textView5
-id textView6
 id textView7
 id textView8
 id textView9
@@ -3648,8 +3643,6 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
-id view
-id view1
 id view2
 id view3
 id view_offset_helper

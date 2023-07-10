@@ -8,10 +8,6 @@
         "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-48:\\layout\\activity_login.xml"
     },
     {
-        "merged": "dev.android.appbusesdriver.app-mergeDebugResources-45:/layout/item_passenger.xml",
-        "source": "dev.android.appbusesdriver.app-main-48:/layout/item_passenger.xml"
-    },
-    {
         "merged": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-mergeDebugResources-45:\\layout\\activity_profile_info.xml",
         "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-48:\\layout\\activity_profile_info.xml"
     },
@@ -24,15 +20,15 @@
         "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-48:\\layout\\activity_change_password.xml"
     },
     {
-        "merged": "dev.android.appbusesdriver.app-mergeDebugResources-45:/layout/activity_main.xml",
-        "source": "dev.android.appbusesdriver.app-main-48:/layout/activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-mergeDebugResources-45:\\layout\\item_passenger.xml",
         "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-48:\\layout\\item_passenger.xml"
     },
     {
         "merged": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-mergeDebugResources-45:\\layout\\activity_welcome.xml",
         "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-48:\\layout\\activity_welcome.xml"
+    },
+    {
+        "merged": "dev.android.appbusesdriver.app-mergeDebugResources-45:/layout/activity_profile.xml",
+        "source": "dev.android.appbusesdriver.app-main-48:/layout/activity_profile.xml"
     }
 ]

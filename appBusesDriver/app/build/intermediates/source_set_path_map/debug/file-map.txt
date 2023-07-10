@@ -39,11 +39,11 @@ dev.android.appbusesdriver.app-lifecycle-viewmodel-2.5.1-37 C:\Users\keych\.grad
 dev.android.appbusesdriver.app-fragment-1.5.4-38 C:\Users\keych\.gradle\caches\transforms-3\f4e8c752aa58e883914bac4502d8ce05\transformed\fragment-1.5.4\res
 dev.android.appbusesdriver.app-navigation-fragment-ktx-2.5.3-39 C:\Users\keych\.gradle\caches\transforms-3\f892d77d61bc7728ff9aa59943d891d4\transformed\navigation-fragment-ktx-2.5.3\res
 dev.android.appbusesdriver.app-annotation-experimental-1.1.0-40 C:\Users\keych\.gradle\caches\transforms-3\fb44608a9e1d20332c6690b5dda0b67e\transformed\annotation-experimental-1.1.0\res
-dev.android.appbusesdriver.app-pngs-41 D:\DOCUMENTOS\My Projects\appBusesDriver\app\build\generated\res\pngs\debug
-dev.android.appbusesdriver.app-resValues-42 D:\DOCUMENTOS\My Projects\appBusesDriver\app\build\generated\res\resValues\debug
-dev.android.appbusesdriver.app-rs-43 D:\DOCUMENTOS\My Projects\appBusesDriver\app\build\generated\res\rs\debug
-dev.android.appbusesdriver.app-packageDebugResources-44 D:\DOCUMENTOS\My Projects\appBusesDriver\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-dev.android.appbusesdriver.app-packageDebugResources-45 D:\DOCUMENTOS\My Projects\appBusesDriver\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-dev.android.appbusesdriver.app-merged_res-46 D:\DOCUMENTOS\My Projects\appBusesDriver\app\build\intermediates\merged_res\debug
-dev.android.appbusesdriver.app-debug-47 D:\DOCUMENTOS\My Projects\appBusesDriver\app\src\debug\res
-dev.android.appbusesdriver.app-main-48 D:\DOCUMENTOS\My Projects\appBusesDriver\app\src\main\res
+dev.android.appbusesdriver.app-pngs-41 C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\build\generated\res\pngs\debug
+dev.android.appbusesdriver.app-resValues-42 C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\build\generated\res\resValues\debug
+dev.android.appbusesdriver.app-rs-43 C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\build\generated\res\rs\debug
+dev.android.appbusesdriver.app-packageDebugResources-44 C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+dev.android.appbusesdriver.app-packageDebugResources-45 C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+dev.android.appbusesdriver.app-merged_res-46 C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\build\intermediates\merged_res\debug
+dev.android.appbusesdriver.app-debug-47 C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\src\debug\res
+dev.android.appbusesdriver.app-main-48 C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\src\main\res

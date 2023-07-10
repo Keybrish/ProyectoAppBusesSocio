@@ -92,6 +92,10 @@
         "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-48:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "dev.android.appbusesdriver.app-merged_res-46:/layout_activity_profile.xml.flat",
+        "source": "dev.android.appbusesdriver.app-main-48:/layout/activity_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-merged_res-46:\\drawable-v24_ic_baseline_search_24.xml.flat",
         "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-48:\\drawable-v24\\ic_baseline_search_24.xml"
     },
@@ -220,10 +224,6 @@
         "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-48:\\drawable-v24\\ic_baseline_directions_bus_24.xml"
     },
     {
-        "merged": "dev.android.appbusesdriver.app-merged_res-46:/layout_activity_main.xml.flat",
-        "source": "dev.android.appbusesdriver.app-main-48:/layout/activity_main.xml"
-    },
-    {
         "merged": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-merged_res-46:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-48:\\xml\\data_extraction_rules.xml"
     },
@@ -278,9 +278,5 @@
     {
         "merged": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-merged_res-46:\\drawable-v24_ic_baseline_access_time_filled_24.xml.flat",
         "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-48:\\drawable-v24\\ic_baseline_access_time_filled_24.xml"
-    },
-    {
-        "merged": "dev.android.appbusesdriver.app-merged_res-46:/layout_item_passenger.xml.flat",
-        "source": "dev.android.appbusesdriver.app-main-48:/layout/item_passenger.xml"
     }
 ]

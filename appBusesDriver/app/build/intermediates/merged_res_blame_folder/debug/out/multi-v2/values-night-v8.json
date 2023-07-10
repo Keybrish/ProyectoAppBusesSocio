@@ -4,25 +4,6 @@
             "outputFile": "dev.android.appbusesdriver.app-mergeDebugResources-44:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "D:\\DOCUMENTOS\\My Projects\\appBusesDriver\\app\\src\\main\\res\\values-night\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "100",
-                        "endLines": "14",
-                        "endColumns": "12",
-                        "endOffsets": "803"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "14",
-                        "endColumns": "12",
-                        "endOffsets": "637"
-                    }
-                },
-                {
                     "source": "C:\\Users\\keych\\.gradle\\caches\\transforms-3\\35247393b79a5fe3c4f500e2adf3d76f\\transformed\\appcompat-1.5.1\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -54,6 +35,25 @@
                         "startOffsets": "1274,1349,1460,1549,1650,1757,1864,1963,2070,2173,2261,2385,2487,2589,2705,2807,2921,3049,3165,3287,3423,3543,3677,3797,3909,4124,4241,4365,4495,4617,4755,4889,5005",
                         "endColumns": "74,110,88,100,106,106,98,106,102,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
                         "endOffsets": "1344,1455,1544,1645,1752,1859,1958,2065,2168,2256,2380,2482,2584,2700,2802,2916,3044,3160,3282,3418,3538,3672,3792,3904,4030,4236,4360,4490,4612,4750,4884,5000,5120"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\keych\\OneDrive\\Documents\\GitHub\\ProyectoAppBusesSocio\\appBusesDriver\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "817"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "637"
                     }
                 }
             ]
