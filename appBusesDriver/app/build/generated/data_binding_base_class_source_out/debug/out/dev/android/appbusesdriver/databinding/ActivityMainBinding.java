@@ -75,13 +75,7 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView textView16;
 
   @NonNull
-  public final TextView textView17;
-
-  @NonNull
   public final TextView textView18;
-
-  @NonNull
-  public final TextView textView19;
 
   @NonNull
   public final TextView textView2;
@@ -99,6 +93,12 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView textView9;
 
   @NonNull
+  public final TextView txtID;
+
+  @NonNull
+  public final TextView txtName;
+
+  @NonNull
   public final View view2;
 
   @NonNull
@@ -111,9 +111,9 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull ImageView imageView6, @NonNull ImageView imgProfile,
       @NonNull RecyclerView rvEmployees, @NonNull Spinner spinner, @NonNull TextView textView,
       @NonNull TextView textView1, @NonNull TextView textView11, @NonNull TextView textView15,
-      @NonNull TextView textView16, @NonNull TextView textView17, @NonNull TextView textView18,
-      @NonNull TextView textView19, @NonNull TextView textView2, @NonNull TextView textView20,
-      @NonNull TextView textView3, @NonNull TextView textView7, @NonNull TextView textView9,
+      @NonNull TextView textView16, @NonNull TextView textView18, @NonNull TextView textView2,
+      @NonNull TextView textView20, @NonNull TextView textView3, @NonNull TextView textView7,
+      @NonNull TextView textView9, @NonNull TextView txtID, @NonNull TextView txtName,
       @NonNull View view2, @NonNull View view3) {
     this.rootView = rootView;
     this.btnProfile = btnProfile;
@@ -133,14 +133,14 @@ public final class ActivityMainBinding implements ViewBinding {
     this.textView11 = textView11;
     this.textView15 = textView15;
     this.textView16 = textView16;
-    this.textView17 = textView17;
     this.textView18 = textView18;
-    this.textView19 = textView19;
     this.textView2 = textView2;
     this.textView20 = textView20;
     this.textView3 = textView3;
     this.textView7 = textView7;
     this.textView9 = textView9;
+    this.txtID = txtID;
+    this.txtName = txtName;
     this.view2 = view2;
     this.view3 = view3;
   }
@@ -274,21 +274,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView17;
-      TextView textView17 = ViewBindings.findChildViewById(rootView, id);
-      if (textView17 == null) {
-        break missingId;
-      }
-
       id = R.id.textView18;
       TextView textView18 = ViewBindings.findChildViewById(rootView, id);
       if (textView18 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView19;
-      TextView textView19 = ViewBindings.findChildViewById(rootView, id);
-      if (textView19 == null) {
         break missingId;
       }
 
@@ -322,6 +310,18 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.txtID;
+      TextView txtID = ViewBindings.findChildViewById(rootView, id);
+      if (txtID == null) {
+        break missingId;
+      }
+
+      id = R.id.txtName;
+      TextView txtName = ViewBindings.findChildViewById(rootView, id);
+      if (txtName == null) {
+        break missingId;
+      }
+
       id = R.id.view2;
       View view2 = ViewBindings.findChildViewById(rootView, id);
       if (view2 == null) {
@@ -337,8 +337,8 @@ public final class ActivityMainBinding implements ViewBinding {
       return new ActivityMainBinding((ConstraintLayout) rootView, btnProfile, constraintLayout,
           constraintLayout5, editTextTextPersonName, imageView2, imageView3, imageView4, imageView5,
           imageView6, imgProfile, rvEmployees, spinner, textView, textView1, textView11, textView15,
-          textView16, textView17, textView18, textView19, textView2, textView20, textView3,
-          textView7, textView9, view2, view3);
+          textView16, textView18, textView2, textView20, textView3, textView7, textView9, txtID,
+          txtName, view2, view3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -100,9 +100,7 @@ id textView13
 id textView14
 id textView15
 id textView16
-id textView17
 id textView18
-id textView19
 id textView2
 id textView20
 id textView3
@@ -113,6 +111,8 @@ id textView8
 id textView9
 id txtEmployee
 id txtEmployee3
+id txtID
+id txtName
 id view2
 id view3
 layout activity_change_password
