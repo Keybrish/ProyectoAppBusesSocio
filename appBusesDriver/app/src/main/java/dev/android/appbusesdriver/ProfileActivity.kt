@@ -39,12 +39,5 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val loadImage = registerForActivityResult(ActivityResultContracts.GetContent(), ActivityResultCallback {
-            binding.imgProfile.setImageURI(it)
-        })
-
-        binding.btnCamera.setOnClickListener {
-            loadImage.launch("image/*")
-        }
     }
 }

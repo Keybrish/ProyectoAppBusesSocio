@@ -63,11 +63,20 @@ class LoginActivity : AppCompatActivity() {
                     }
                 startActivity(intent)
             } else {
-                Toast.makeText(this@LoginActivity, "Contraseña incorrecta", Toast.LENGTH_SHORT).show()
+                showAlert()
             }
         } else {
-            Toast.makeText(this@LoginActivity, "Usuario no registrado", Toast.LENGTH_SHORT).show()
+            showAlert()
         }
+    }
+
+    private fun showAlert() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Ingrese correctamente su usuario y contraseña")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -92,8 +101,7 @@ class LoginActivity : AppCompatActivity() {
                             if (user.email_usuario != null) {
                                 getPassword(user)
                             } else {
-                                Toast.makeText(this@LoginActivity, "Correo incorrecto", Toast.LENGTH_SHORT).show()
-                            }
+                                showAlert()                            }
                         } else {
                             Toast.makeText(this@LoginActivity, "Correo incorrecto", Toast.LENGTH_SHORT).show()
                         }

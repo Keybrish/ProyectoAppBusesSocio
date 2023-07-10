@@ -26,9 +26,6 @@ public final class ActivityProfileBinding implements ViewBinding {
   public final ImageView btnBack;
 
   @NonNull
-  public final ImageView btnCamera;
-
-  @NonNull
   public final ImageView btnChangePassword;
 
   @NonNull
@@ -39,9 +36,6 @@ public final class ActivityProfileBinding implements ViewBinding {
 
   @NonNull
   public final CardView btnProfile;
-
-  @NonNull
-  public final CardView btnProfile1;
 
   @NonNull
   public final CardView btnProfile2;
@@ -68,20 +62,17 @@ public final class ActivityProfileBinding implements ViewBinding {
   public final TextView textView14;
 
   private ActivityProfileBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnBack,
-      @NonNull ImageView btnCamera, @NonNull ImageView btnChangePassword,
-      @NonNull ImageView btnEditInfo, @NonNull Button btnLogout, @NonNull CardView btnProfile,
-      @NonNull CardView btnProfile1, @NonNull CardView btnProfile2,
+      @NonNull ImageView btnChangePassword, @NonNull ImageView btnEditInfo,
+      @NonNull Button btnLogout, @NonNull CardView btnProfile, @NonNull CardView btnProfile2,
       @NonNull ConstraintLayout constraintLayout4, @NonNull ImageView imageView8,
       @NonNull ImageView imgProfile, @NonNull TextView textView10, @NonNull TextView textView12,
       @NonNull TextView textView13, @NonNull TextView textView14) {
     this.rootView = rootView;
     this.btnBack = btnBack;
-    this.btnCamera = btnCamera;
     this.btnChangePassword = btnChangePassword;
     this.btnEditInfo = btnEditInfo;
     this.btnLogout = btnLogout;
     this.btnProfile = btnProfile;
-    this.btnProfile1 = btnProfile1;
     this.btnProfile2 = btnProfile2;
     this.constraintLayout4 = constraintLayout4;
     this.imageView8 = imageView8;
@@ -125,12 +116,6 @@ public final class ActivityProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnCamera;
-      ImageView btnCamera = ViewBindings.findChildViewById(rootView, id);
-      if (btnCamera == null) {
-        break missingId;
-      }
-
       id = R.id.btnChangePassword;
       ImageView btnChangePassword = ViewBindings.findChildViewById(rootView, id);
       if (btnChangePassword == null) {
@@ -152,12 +137,6 @@ public final class ActivityProfileBinding implements ViewBinding {
       id = R.id.btnProfile;
       CardView btnProfile = ViewBindings.findChildViewById(rootView, id);
       if (btnProfile == null) {
-        break missingId;
-      }
-
-      id = R.id.btnProfile1;
-      CardView btnProfile1 = ViewBindings.findChildViewById(rootView, id);
-      if (btnProfile1 == null) {
         break missingId;
       }
 
@@ -209,10 +188,9 @@ public final class ActivityProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityProfileBinding((ConstraintLayout) rootView, btnBack, btnCamera,
-          btnChangePassword, btnEditInfo, btnLogout, btnProfile, btnProfile1, btnProfile2,
-          constraintLayout4, imageView8, imgProfile, textView10, textView12, textView13,
-          textView14);
+      return new ActivityProfileBinding((ConstraintLayout) rootView, btnBack, btnChangePassword,
+          btnEditInfo, btnLogout, btnProfile, btnProfile2, constraintLayout4, imageView8,
+          imgProfile, textView10, textView12, textView13, textView14);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

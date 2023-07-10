@@ -3281,7 +3281,6 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btnBack
-id btnCamera
 id btnChangePassword
 id btnEditInfo
 id btnFrequency
@@ -3289,7 +3288,6 @@ id btnLogin
 id btnLogout
 id btnNext
 id btnProfile
-id btnProfile1
 id btnProfile2
 id btnSave
 id buttonPanel

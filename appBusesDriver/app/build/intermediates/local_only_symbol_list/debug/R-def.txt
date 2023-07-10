@@ -61,7 +61,6 @@ drawable undraw_travelers_re_y25a
 font roboto_bold
 font roboto_regular
 id btnBack
-id btnCamera
 id btnChangePassword
 id btnEditInfo
 id btnFrequency
@@ -69,7 +68,6 @@ id btnLogin
 id btnLogout
 id btnNext
 id btnProfile
-id btnProfile1
 id btnProfile2
 id btnSave
 id constraintLayout

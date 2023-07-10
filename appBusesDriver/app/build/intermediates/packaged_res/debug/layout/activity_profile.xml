@@ -47,34 +47,6 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btnProfile1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="-5dp"
-        app:cardBackgroundColor="#fff"
-        app:cardCornerRadius="75dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnProfile"
-        app:layout_constraintEnd_toEndOf="@+id/btnProfile">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <ImageView
-        android:id="@+id/btnCamera"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnProfile1"
-        app:layout_constraintEnd_toEndOf="@+id/btnProfile1"
-        app:layout_constraintStart_toStartOf="@+id/btnProfile1"
-        app:layout_constraintTop_toTopOf="@+id/btnProfile1"
-        app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
         android:layout_width="wrap_content"
