@@ -52,6 +52,7 @@ drawable less
 drawable plus
 drawable plus1
 drawable purple_aesthetic_woman_portrait_7h0yo10dvp884ons
+drawable socio
 drawable terminal_terrestre_quito
 drawable texto
 drawable texto_blanco
@@ -126,6 +127,13 @@ layout item_passenger
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string default_web_client_id
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
+string project_id
 style Theme.AppBusesDriver
 xml backup_rules
 xml data_extraction_rules
