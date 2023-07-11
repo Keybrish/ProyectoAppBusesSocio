@@ -20,3 +20,15 @@ data class Horarios (
     val hora_salida_viaje: String,
     val fecha_viaje: String
 ): Serializable
+
+data class Detalle_Compra(
+    val id_venta_pertenece: Int,
+    val id_asiento: Int,
+    val cedula_pasajero: String,
+    val foto_usuario: String
+): Serializable
+
+data class Bus (
+    val id_bus: Int,
+    val numero_bus: Int
+): Serializable

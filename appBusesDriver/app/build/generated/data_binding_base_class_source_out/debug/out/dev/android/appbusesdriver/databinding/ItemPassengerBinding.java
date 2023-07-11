@@ -30,20 +30,20 @@ public final class ItemPassengerBinding implements ViewBinding {
   public final ImageView imgProfile;
 
   @NonNull
-  public final TextView txtEmployee;
+  public final TextView txtID;
 
   @NonNull
-  public final TextView txtEmployee3;
+  public final TextView txtSeat;
 
   private ItemPassengerBinding(@NonNull CardView rootView, @NonNull CardView btnFrequency,
-      @NonNull CardView btnProfile, @NonNull ImageView imgProfile, @NonNull TextView txtEmployee,
-      @NonNull TextView txtEmployee3) {
+      @NonNull CardView btnProfile, @NonNull ImageView imgProfile, @NonNull TextView txtID,
+      @NonNull TextView txtSeat) {
     this.rootView = rootView;
     this.btnFrequency = btnFrequency;
     this.btnProfile = btnProfile;
     this.imgProfile = imgProfile;
-    this.txtEmployee = txtEmployee;
-    this.txtEmployee3 = txtEmployee3;
+    this.txtID = txtID;
+    this.txtSeat = txtSeat;
   }
 
   @Override
@@ -91,20 +91,20 @@ public final class ItemPassengerBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.txtEmployee;
-      TextView txtEmployee = ViewBindings.findChildViewById(rootView, id);
-      if (txtEmployee == null) {
+      id = R.id.txtID;
+      TextView txtID = ViewBindings.findChildViewById(rootView, id);
+      if (txtID == null) {
         break missingId;
       }
 
-      id = R.id.txtEmployee3;
-      TextView txtEmployee3 = ViewBindings.findChildViewById(rootView, id);
-      if (txtEmployee3 == null) {
+      id = R.id.txtSeat;
+      TextView txtSeat = ViewBindings.findChildViewById(rootView, id);
+      if (txtSeat == null) {
         break missingId;
       }
 
       return new ItemPassengerBinding((CardView) rootView, btnFrequency, btnProfile, imgProfile,
-          txtEmployee, txtEmployee3);
+          txtID, txtSeat);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

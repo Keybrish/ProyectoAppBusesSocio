@@ -5,6 +5,8 @@ array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
 array preloaded_fonts
 color black
+color gray
+color purple
 color purple_200
 color purple_500
 color purple_700
@@ -56,6 +58,7 @@ drawable socio
 drawable terminal_terrestre_quito
 drawable texto
 drawable texto_blanco
+drawable travel
 drawable undraw_travel_plans_re_103r
 drawable undraw_travelers_re_y25a
 font roboto_bold
@@ -89,7 +92,7 @@ id imageView4
 id imageView5
 id imageView8
 id imgProfile
-id rvEmployees
+id rvPassengers
 id spinner
 id textView
 id textView1
@@ -108,10 +111,10 @@ id textView30
 id textView5
 id textView7
 id textView9
-id txtEmployee
-id txtEmployee3
+id txtBusNumber
 id txtID
 id txtName
+id txtSeat
 id view2
 id view3
 layout activity_change_password

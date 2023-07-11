@@ -2,7 +2,9 @@ package dev.android.appbusesdriver.database;
 
 import java.util.List;
 
+import dev.android.appbusesdriver.models.Bus;
 import dev.android.appbusesdriver.models.Contrasenia;
+import dev.android.appbusesdriver.models.Detalle_Compra;
 import dev.android.appbusesdriver.models.Horarios;
 import dev.android.appbusesdriver.models.Usuario;
 import retrofit2.Call;
@@ -19,8 +21,17 @@ public interface api {
     @GET("obtenerClavePasajero.php")
     Call<Contrasenia> getPassword(@Query("email_usuario")String email_usuario);
 
-    @FormUrlEncoded
-    @POST("listarHorarioSocio.php")
-    Call<List<Horarios>> getTimeDriver(@Field("id_socio") Integer id_socio);
+    @GET("listarHorarioSocio.php")
+    Call<List<Horarios>> getTimeDriver(@Query("id_socio") Integer id_socio);
+
+    @GET("listarDetalleVenta.php")
+    Call<List<Detalle_Compra>> getPassengers(@Query("id_venta_pertenece") Integer id_venta_pertenece);
+
+    @GET("obtenerIdViaje.php")
+    Call<List<Detalle_Compra>> getPassengers(@Query("hora_salida_viaje") String hora_salida_viaje,
+                                             @Query("fecha_viaje") String fecha_viaje);
+
+    @GET("obtenerNumBus.php")
+    Call<Bus> getBusNumber(@Query("id_socio") Integer id_socio);
 }
 

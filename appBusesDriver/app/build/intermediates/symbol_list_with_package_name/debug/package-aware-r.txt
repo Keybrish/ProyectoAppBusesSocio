@@ -1475,6 +1475,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -2111,6 +2112,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purple
 color purple_200
 color purple_500
 color purple_700
@@ -3169,6 +3171,7 @@ drawable texto
 drawable texto_blanco
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable travel
 drawable undraw_travel_plans_re_103r
 drawable undraw_travelers_re_y25a
 font roboto_bold
@@ -3572,7 +3575,7 @@ id right_side
 id rounded
 id row_index_key
 id rtl
-id rvEmployees
+id rvPassengers
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3715,10 +3718,10 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id txtEmployee
-id txtEmployee3
+id txtBusNumber
 id txtID
 id txtName
+id txtSeat
 id unchecked
 id uniform
 id unlabeled

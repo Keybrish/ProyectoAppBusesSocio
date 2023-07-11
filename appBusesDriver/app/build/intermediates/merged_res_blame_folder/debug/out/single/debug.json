@@ -282,5 +282,9 @@
     {
         "merged": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-merged_res-53:\\drawable_ic_baseline_qr_code_scanner_24.xml.flat",
         "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-55:\\drawable\\ic_baseline_qr_code_scanner_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-merged_res-53:\\drawable-v24_travel.png.flat",
+        "source": "C:\\Users\\keych\\.gradle\\daemon\\7.4\\dev.android.appbusesdriver.app-main-55:\\drawable-v24\\travel.png"
     }
 ]

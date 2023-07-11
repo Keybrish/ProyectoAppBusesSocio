@@ -36,9 +36,6 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ConstraintLayout constraintLayout5;
 
   @NonNull
-  public final TextView editTextTextPersonName;
-
-  @NonNull
   public final ImageView imageView2;
 
   @NonNull
@@ -54,7 +51,7 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ImageView imgProfile;
 
   @NonNull
-  public final RecyclerView rvEmployees;
+  public final RecyclerView rvPassengers;
 
   @NonNull
   public final Spinner spinner;
@@ -93,6 +90,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView textView9;
 
   @NonNull
+  public final TextView txtBusNumber;
+
+  @NonNull
   public final TextView txtID;
 
   @NonNull
@@ -106,27 +106,26 @@ public final class ActivityMainBinding implements ViewBinding {
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull CardView btnProfile,
       @NonNull ImageView btnScanner, @NonNull ConstraintLayout constraintLayout,
-      @NonNull ConstraintLayout constraintLayout5, @NonNull TextView editTextTextPersonName,
-      @NonNull ImageView imageView2, @NonNull ImageView imageView3, @NonNull ImageView imageView4,
-      @NonNull ImageView imageView5, @NonNull ImageView imgProfile,
-      @NonNull RecyclerView rvEmployees, @NonNull Spinner spinner, @NonNull TextView textView,
-      @NonNull TextView textView1, @NonNull TextView textView11, @NonNull TextView textView15,
-      @NonNull TextView textView16, @NonNull TextView textView18, @NonNull TextView textView2,
-      @NonNull TextView textView20, @NonNull TextView textView3, @NonNull TextView textView7,
-      @NonNull TextView textView9, @NonNull TextView txtID, @NonNull TextView txtName,
-      @NonNull View view2, @NonNull View view3) {
+      @NonNull ConstraintLayout constraintLayout5, @NonNull ImageView imageView2,
+      @NonNull ImageView imageView3, @NonNull ImageView imageView4, @NonNull ImageView imageView5,
+      @NonNull ImageView imgProfile, @NonNull RecyclerView rvPassengers, @NonNull Spinner spinner,
+      @NonNull TextView textView, @NonNull TextView textView1, @NonNull TextView textView11,
+      @NonNull TextView textView15, @NonNull TextView textView16, @NonNull TextView textView18,
+      @NonNull TextView textView2, @NonNull TextView textView20, @NonNull TextView textView3,
+      @NonNull TextView textView7, @NonNull TextView textView9, @NonNull TextView txtBusNumber,
+      @NonNull TextView txtID, @NonNull TextView txtName, @NonNull View view2,
+      @NonNull View view3) {
     this.rootView = rootView;
     this.btnProfile = btnProfile;
     this.btnScanner = btnScanner;
     this.constraintLayout = constraintLayout;
     this.constraintLayout5 = constraintLayout5;
-    this.editTextTextPersonName = editTextTextPersonName;
     this.imageView2 = imageView2;
     this.imageView3 = imageView3;
     this.imageView4 = imageView4;
     this.imageView5 = imageView5;
     this.imgProfile = imgProfile;
-    this.rvEmployees = rvEmployees;
+    this.rvPassengers = rvPassengers;
     this.spinner = spinner;
     this.textView = textView;
     this.textView1 = textView1;
@@ -139,6 +138,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.textView3 = textView3;
     this.textView7 = textView7;
     this.textView9 = textView9;
+    this.txtBusNumber = txtBusNumber;
     this.txtID = txtID;
     this.txtName = txtName;
     this.view2 = view2;
@@ -196,12 +196,6 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.editTextTextPersonName;
-      TextView editTextTextPersonName = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPersonName == null) {
-        break missingId;
-      }
-
       id = R.id.imageView2;
       ImageView imageView2 = ViewBindings.findChildViewById(rootView, id);
       if (imageView2 == null) {
@@ -232,9 +226,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.rvEmployees;
-      RecyclerView rvEmployees = ViewBindings.findChildViewById(rootView, id);
-      if (rvEmployees == null) {
+      id = R.id.rvPassengers;
+      RecyclerView rvPassengers = ViewBindings.findChildViewById(rootView, id);
+      if (rvPassengers == null) {
         break missingId;
       }
 
@@ -310,6 +304,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.txtBusNumber;
+      TextView txtBusNumber = ViewBindings.findChildViewById(rootView, id);
+      if (txtBusNumber == null) {
+        break missingId;
+      }
+
       id = R.id.txtID;
       TextView txtID = ViewBindings.findChildViewById(rootView, id);
       if (txtID == null) {
@@ -335,10 +335,10 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, btnProfile, btnScanner,
-          constraintLayout, constraintLayout5, editTextTextPersonName, imageView2, imageView3,
-          imageView4, imageView5, imgProfile, rvEmployees, spinner, textView, textView1, textView11,
-          textView15, textView16, textView18, textView2, textView20, textView3, textView7,
-          textView9, txtID, txtName, view2, view3);
+          constraintLayout, constraintLayout5, imageView2, imageView3, imageView4, imageView5,
+          imgProfile, rvPassengers, spinner, textView, textView1, textView11, textView15,
+          textView16, textView18, textView2, textView20, textView3, textView7, textView9,
+          txtBusNumber, txtID, txtName, view2, view3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
