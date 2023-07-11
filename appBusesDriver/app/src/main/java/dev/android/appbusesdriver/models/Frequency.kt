@@ -15,3 +15,8 @@ data class Usuario (
 data class Contrasenia (
     val clave_usuario: String
 ): Serializable
+
+data class Horarios (
+    val hora_salida_viaje: String,
+    val fecha_viaje: String
+): Serializable

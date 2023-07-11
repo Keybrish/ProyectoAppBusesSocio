@@ -1,17 +1,20 @@
 package dev.android.appbusesdriver
 
+import android.R
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Window
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.google.zxing.integration.android.IntentIntegrator
 import com.squareup.picasso.Picasso
 import dev.android.appbusesdriver.database.api
 import dev.android.appbusesdriver.databinding.ActivityMainBinding
+import dev.android.appbusesdriver.models.Horarios
 import dev.android.appbusesdriver.models.Usuario
 import retrofit2.Call
 import retrofit2.Callback
@@ -47,6 +50,42 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun cargarDatos(id_socio: Int){
+        val retrofitBuilder = Retrofit.Builder()
+            .baseUrl("https://nilotic-quart.000webhostapp.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(api::class.java)
+        val retrofit = retrofitBuilder.getTimeDriver(id_socio)
+        retrofit.enqueue(
+            object : Callback<List<Horarios>> {
+                override fun onFailure(call: Call<List<Horarios>>, t: Throwable) {
+                    Log.d("Agregar", t.message.toString())
+                }
+                override fun onResponse(call: Call<List<Horarios>>, response: retrofit2.Response<List<Horarios>> ) {
+                    if (response.isSuccessful) {
+                        val horarios = response.body()
+                        val time = horarios as MutableList<Horarios>
+                        Log.d("Respuesta", time.toString())
+                        if (horarios != null) {
+                            binding.spinner.dropDownVerticalOffset
+                            val op = mutableListOf<String>()
+                            for (element in horarios){
+                                op.add(element.hora_salida_viaje)
+                            }
+                            val sp = ArrayAdapter(this@MainActivity, R.layout.simple_spinner_item, op)
+                            binding.spinner.adapter = sp
+                        }
+                    } else {
+                        // Manejar el caso de respuesta no exitosa
+                        Toast.makeText(this@MainActivity, "No existen elementos", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+            }
+        )
+    }
+
     @RequiresApi(Build.VERSION_CODES.O)
     fun getUser(email_usuario: String){
         val retrofitBuilder = Retrofit.Builder()
@@ -69,6 +108,7 @@ class MainActivity : AppCompatActivity() {
                             binding.txtID.text = user.cedula_usuario
                             binding.txtName.text = user.nombre_usuario + " " + user.apellido_usuario
                             Log.d("Usuario", user.toString())
+                            cargarDatos(usuario.id_usuario)
                         }
                     } else {
                         // Manejar el caso de respuesta no exitosa
