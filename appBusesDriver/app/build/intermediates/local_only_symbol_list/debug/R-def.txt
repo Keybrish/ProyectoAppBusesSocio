@@ -70,6 +70,7 @@ id btnNext
 id btnProfile
 id btnProfile2
 id btnSave
+id btnScanner
 id constraintLayout
 id constraintLayout2
 id constraintLayout4
@@ -86,7 +87,6 @@ id imageView2
 id imageView3
 id imageView4
 id imageView5
-id imageView6
 id imageView8
 id imgProfile
 id rvEmployees
@@ -107,7 +107,6 @@ id textView3
 id textView30
 id textView5
 id textView7
-id textView8
 id textView9
 id txtEmployee
 id txtEmployee3

@@ -27,6 +27,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final CardView btnProfile;
 
   @NonNull
+  public final ImageView btnScanner;
+
+  @NonNull
   public final ConstraintLayout constraintLayout;
 
   @NonNull
@@ -46,9 +49,6 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @NonNull
   public final ImageView imageView5;
-
-  @NonNull
-  public final ImageView imageView6;
 
   @NonNull
   public final ImageView imgProfile;
@@ -105,10 +105,10 @@ public final class ActivityMainBinding implements ViewBinding {
   public final View view3;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull CardView btnProfile,
-      @NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout5,
-      @NonNull TextView editTextTextPersonName, @NonNull ImageView imageView2,
-      @NonNull ImageView imageView3, @NonNull ImageView imageView4, @NonNull ImageView imageView5,
-      @NonNull ImageView imageView6, @NonNull ImageView imgProfile,
+      @NonNull ImageView btnScanner, @NonNull ConstraintLayout constraintLayout,
+      @NonNull ConstraintLayout constraintLayout5, @NonNull TextView editTextTextPersonName,
+      @NonNull ImageView imageView2, @NonNull ImageView imageView3, @NonNull ImageView imageView4,
+      @NonNull ImageView imageView5, @NonNull ImageView imgProfile,
       @NonNull RecyclerView rvEmployees, @NonNull Spinner spinner, @NonNull TextView textView,
       @NonNull TextView textView1, @NonNull TextView textView11, @NonNull TextView textView15,
       @NonNull TextView textView16, @NonNull TextView textView18, @NonNull TextView textView2,
@@ -117,6 +117,7 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull View view2, @NonNull View view3) {
     this.rootView = rootView;
     this.btnProfile = btnProfile;
+    this.btnScanner = btnScanner;
     this.constraintLayout = constraintLayout;
     this.constraintLayout5 = constraintLayout5;
     this.editTextTextPersonName = editTextTextPersonName;
@@ -124,7 +125,6 @@ public final class ActivityMainBinding implements ViewBinding {
     this.imageView3 = imageView3;
     this.imageView4 = imageView4;
     this.imageView5 = imageView5;
-    this.imageView6 = imageView6;
     this.imgProfile = imgProfile;
     this.rvEmployees = rvEmployees;
     this.spinner = spinner;
@@ -178,6 +178,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnScanner;
+      ImageView btnScanner = ViewBindings.findChildViewById(rootView, id);
+      if (btnScanner == null) {
+        break missingId;
+      }
+
       id = R.id.constraintLayout;
       ConstraintLayout constraintLayout = ViewBindings.findChildViewById(rootView, id);
       if (constraintLayout == null) {
@@ -217,12 +223,6 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.imageView5;
       ImageView imageView5 = ViewBindings.findChildViewById(rootView, id);
       if (imageView5 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView6;
-      ImageView imageView6 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView6 == null) {
         break missingId;
       }
 
@@ -334,11 +334,11 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, btnProfile, constraintLayout,
-          constraintLayout5, editTextTextPersonName, imageView2, imageView3, imageView4, imageView5,
-          imageView6, imgProfile, rvEmployees, spinner, textView, textView1, textView11, textView15,
-          textView16, textView18, textView2, textView20, textView3, textView7, textView9, txtID,
-          txtName, view2, view3);
+      return new ActivityMainBinding((ConstraintLayout) rootView, btnProfile, btnScanner,
+          constraintLayout, constraintLayout5, editTextTextPersonName, imageView2, imageView3,
+          imageView4, imageView5, imgProfile, rvEmployees, spinner, textView, textView1, textView11,
+          textView15, textView16, textView18, textView2, textView20, textView3, textView7,
+          textView9, txtID, txtName, view2, view3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

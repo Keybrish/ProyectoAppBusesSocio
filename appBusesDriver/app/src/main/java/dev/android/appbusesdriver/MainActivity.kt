@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.Window
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import com.google.zxing.integration.android.IntentIntegrator
 import com.squareup.picasso.Picasso
 import dev.android.appbusesdriver.database.api
 import dev.android.appbusesdriver.databinding.ActivityMainBinding
@@ -39,6 +40,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ProfileActivity::class.java).apply {
             }
             startActivity(intent)
+        }
+
+        binding.btnScanner.setOnClickListener {
+            initScanner()
         }
     }
 
@@ -72,5 +77,27 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         )
+    }
+
+    private fun initScanner() {
+        val integrator = IntentIntegrator(this)
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
+        integrator.setPrompt("Codigo QR")
+        integrator.initiateScan()
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+        if (result != null) {
+            if(result.contents == null){
+                Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this, "El valor escaneado es: ${result.contents}", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+
     }
 }
