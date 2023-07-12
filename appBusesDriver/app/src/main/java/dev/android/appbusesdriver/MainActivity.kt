@@ -193,7 +193,7 @@ class MainActivity : AppCompatActivity() {
                         Log.d("Respuesta", destino.toString())
                         if (destino != null) {
                             binding.txtDestination.text = "${destino.nombre_ciudad}, ${destino.nombre_provincia}"
-                            Toast.makeText(this@MainActivity, "Wii", Toast.LENGTH_SHORT).show()
+//                            Toast.makeText(this@MainActivity, "Wii", Toast.LENGTH_SHORT).show()
                         }
                     } else {
                         // Manejar el caso de respuesta no exitosa
