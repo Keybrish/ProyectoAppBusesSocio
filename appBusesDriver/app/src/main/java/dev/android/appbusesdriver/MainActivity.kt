@@ -18,8 +18,6 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.zxing.integration.android.IntentIntegrator
-import com.squareup.picasso.Picasso
-import dev.android.appbuses.ProfileActivity
 import dev.android.appbusesdriver.database.api
 import dev.android.appbusesdriver.databinding.ActivityMainBinding
 import dev.android.appbusesdriver.models.*

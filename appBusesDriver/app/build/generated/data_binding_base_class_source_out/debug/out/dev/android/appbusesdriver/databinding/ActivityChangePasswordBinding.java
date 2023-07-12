@@ -29,27 +29,27 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
   public final Button btnSave;
 
   @NonNull
-  public final EditText editTextTextPersonName;
+  public final EditText edtCurrentPassword;
 
   @NonNull
-  public final EditText editTextTextPersonName4;
+  public final EditText edtPassword;
 
   @NonNull
-  public final EditText editTextTextPersonName5;
+  public final EditText edtPasswordAgain;
 
   @NonNull
   public final TextView textView30;
 
   private ActivityChangePasswordBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView btnBack, @NonNull Button btnSave, @NonNull EditText editTextTextPersonName,
-      @NonNull EditText editTextTextPersonName4, @NonNull EditText editTextTextPersonName5,
+      @NonNull ImageView btnBack, @NonNull Button btnSave, @NonNull EditText edtCurrentPassword,
+      @NonNull EditText edtPassword, @NonNull EditText edtPasswordAgain,
       @NonNull TextView textView30) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnSave = btnSave;
-    this.editTextTextPersonName = editTextTextPersonName;
-    this.editTextTextPersonName4 = editTextTextPersonName4;
-    this.editTextTextPersonName5 = editTextTextPersonName5;
+    this.edtCurrentPassword = edtCurrentPassword;
+    this.edtPassword = edtPassword;
+    this.edtPasswordAgain = edtPasswordAgain;
     this.textView30 = textView30;
   }
 
@@ -92,21 +92,21 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.editTextTextPersonName;
-      EditText editTextTextPersonName = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPersonName == null) {
+      id = R.id.edtCurrentPassword;
+      EditText edtCurrentPassword = ViewBindings.findChildViewById(rootView, id);
+      if (edtCurrentPassword == null) {
         break missingId;
       }
 
-      id = R.id.editTextTextPersonName4;
-      EditText editTextTextPersonName4 = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPersonName4 == null) {
+      id = R.id.edtPassword;
+      EditText edtPassword = ViewBindings.findChildViewById(rootView, id);
+      if (edtPassword == null) {
         break missingId;
       }
 
-      id = R.id.editTextTextPersonName5;
-      EditText editTextTextPersonName5 = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPersonName5 == null) {
+      id = R.id.edtPasswordAgain;
+      EditText edtPasswordAgain = ViewBindings.findChildViewById(rootView, id);
+      if (edtPasswordAgain == null) {
         break missingId;
       }
 
@@ -117,7 +117,7 @@ public final class ActivityChangePasswordBinding implements ViewBinding {
       }
 
       return new ActivityChangePasswordBinding((ConstraintLayout) rootView, btnBack, btnSave,
-          editTextTextPersonName, editTextTextPersonName4, editTextTextPersonName5, textView30);
+          edtCurrentPassword, edtPassword, edtPasswordAgain, textView30);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

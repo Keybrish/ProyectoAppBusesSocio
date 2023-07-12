@@ -29,36 +29,35 @@ public final class ActivityProfileInfoBinding implements ViewBinding {
   public final Button btnSave;
 
   @NonNull
-  public final EditText editTextTextPersonName;
+  public final EditText edtEmail;
 
   @NonNull
-  public final EditText editTextTextPersonName4;
+  public final EditText edtID;
 
   @NonNull
-  public final EditText editTextTextPersonName5;
+  public final EditText edtLastName;
 
   @NonNull
-  public final EditText editTextTextPersonName6;
+  public final EditText edtName;
 
   @NonNull
-  public final EditText editTextTextPersonName7;
+  public final EditText edtPhone;
 
   @NonNull
   public final TextView textView30;
 
   private ActivityProfileInfoBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnBack,
-      @NonNull Button btnSave, @NonNull EditText editTextTextPersonName,
-      @NonNull EditText editTextTextPersonName4, @NonNull EditText editTextTextPersonName5,
-      @NonNull EditText editTextTextPersonName6, @NonNull EditText editTextTextPersonName7,
+      @NonNull Button btnSave, @NonNull EditText edtEmail, @NonNull EditText edtID,
+      @NonNull EditText edtLastName, @NonNull EditText edtName, @NonNull EditText edtPhone,
       @NonNull TextView textView30) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnSave = btnSave;
-    this.editTextTextPersonName = editTextTextPersonName;
-    this.editTextTextPersonName4 = editTextTextPersonName4;
-    this.editTextTextPersonName5 = editTextTextPersonName5;
-    this.editTextTextPersonName6 = editTextTextPersonName6;
-    this.editTextTextPersonName7 = editTextTextPersonName7;
+    this.edtEmail = edtEmail;
+    this.edtID = edtID;
+    this.edtLastName = edtLastName;
+    this.edtName = edtName;
+    this.edtPhone = edtPhone;
     this.textView30 = textView30;
   }
 
@@ -101,33 +100,33 @@ public final class ActivityProfileInfoBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.editTextTextPersonName;
-      EditText editTextTextPersonName = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPersonName == null) {
+      id = R.id.edtEmail;
+      EditText edtEmail = ViewBindings.findChildViewById(rootView, id);
+      if (edtEmail == null) {
         break missingId;
       }
 
-      id = R.id.editTextTextPersonName4;
-      EditText editTextTextPersonName4 = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPersonName4 == null) {
+      id = R.id.edtID;
+      EditText edtID = ViewBindings.findChildViewById(rootView, id);
+      if (edtID == null) {
         break missingId;
       }
 
-      id = R.id.editTextTextPersonName5;
-      EditText editTextTextPersonName5 = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPersonName5 == null) {
+      id = R.id.edtLastName;
+      EditText edtLastName = ViewBindings.findChildViewById(rootView, id);
+      if (edtLastName == null) {
         break missingId;
       }
 
-      id = R.id.editTextTextPersonName6;
-      EditText editTextTextPersonName6 = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPersonName6 == null) {
+      id = R.id.edtName;
+      EditText edtName = ViewBindings.findChildViewById(rootView, id);
+      if (edtName == null) {
         break missingId;
       }
 
-      id = R.id.editTextTextPersonName7;
-      EditText editTextTextPersonName7 = ViewBindings.findChildViewById(rootView, id);
-      if (editTextTextPersonName7 == null) {
+      id = R.id.edtPhone;
+      EditText edtPhone = ViewBindings.findChildViewById(rootView, id);
+      if (edtPhone == null) {
         break missingId;
       }
 
@@ -137,9 +136,8 @@ public final class ActivityProfileInfoBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityProfileInfoBinding((ConstraintLayout) rootView, btnBack, btnSave,
-          editTextTextPersonName, editTextTextPersonName4, editTextTextPersonName5,
-          editTextTextPersonName6, editTextTextPersonName7, textView30);
+      return new ActivityProfileInfoBinding((ConstraintLayout) rootView, btnBack, btnSave, edtEmail,
+          edtID, edtLastName, edtName, edtPhone, textView30);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
