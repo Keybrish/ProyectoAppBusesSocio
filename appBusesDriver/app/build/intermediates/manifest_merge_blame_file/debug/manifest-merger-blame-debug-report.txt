@@ -90,8 +90,8 @@
 48        android:supportsRtl="true"
 48-->C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\src\main\AndroidManifest.xml:15:9-35
 49        android:testOnly="true"
-50        android:theme="@style/Theme.AppBusesDriver" >
-50-->C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\src\main\AndroidManifest.xml:16:9-52
+50        android:theme="@style/AppBusesDriver" >
+50-->C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\src\main\AndroidManifest.xml:16:9-46
 51        <activity
 51-->C:\Users\keych\OneDrive\Documents\GitHub\ProyectoAppBusesSocio\appBusesDriver\app\src\main\AndroidManifest.xml:18:9-24:20
 52            android:name="dev.android.appbusesdriver.ChangePasswordActivity"

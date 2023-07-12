@@ -32,3 +32,16 @@ data class Bus (
     val id_bus: Int,
     val numero_bus: Int
 ): Serializable
+
+data class Viaje (
+    val id_viaje: Int
+): Serializable
+
+data class Frecuencia (
+    val id_venta_pertenece: Int,
+    val id_asiento: Int,
+    val costo_asiento: Float,
+    val costo_parada: Float,
+    val cedula_pasajero: String,
+    val total_detalle: Float
+): Serializable

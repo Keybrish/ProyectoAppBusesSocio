@@ -2112,6 +2112,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purp
 color purple
 color purple_200
 color purple_500
@@ -3163,6 +3164,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable plus
 drawable plus1
+drawable progress_bar
 drawable purple_aesthetic_woman_portrait_7h0yo10dvp884ons
 drawable socio
 drawable terminal_terrestre_quito
@@ -3461,6 +3463,7 @@ id list_item
 id locale
 id ltr
 id m3_side_sheet
+id mainContainer
 id marquee
 id masked
 id match_constraint
@@ -4192,6 +4195,7 @@ style Animation_Design_BottomSheetDialog
 style Animation_Material3_BottomSheetDialog
 style Animation_Material3_SideSheetDialog
 style Animation_MaterialComponents_BottomSheetDialog
+style AppBusesDriver
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog

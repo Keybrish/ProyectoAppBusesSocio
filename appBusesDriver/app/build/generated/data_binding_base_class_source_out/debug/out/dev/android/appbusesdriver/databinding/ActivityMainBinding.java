@@ -4,6 +4,7 @@ package dev.android.appbusesdriver.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -21,7 +22,7 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final FrameLayout rootView;
 
   @NonNull
   public final CardView btnProfile;
@@ -49,6 +50,9 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @NonNull
   public final ImageView imgProfile;
+
+  @NonNull
+  public final FrameLayout mainContainer;
 
   @NonNull
   public final RecyclerView rvPassengers;
@@ -104,17 +108,17 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final View view3;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull CardView btnProfile,
+  private ActivityMainBinding(@NonNull FrameLayout rootView, @NonNull CardView btnProfile,
       @NonNull ImageView btnScanner, @NonNull ConstraintLayout constraintLayout,
       @NonNull ConstraintLayout constraintLayout5, @NonNull ImageView imageView2,
       @NonNull ImageView imageView3, @NonNull ImageView imageView4, @NonNull ImageView imageView5,
-      @NonNull ImageView imgProfile, @NonNull RecyclerView rvPassengers, @NonNull Spinner spinner,
-      @NonNull TextView textView, @NonNull TextView textView1, @NonNull TextView textView11,
-      @NonNull TextView textView15, @NonNull TextView textView16, @NonNull TextView textView18,
-      @NonNull TextView textView2, @NonNull TextView textView20, @NonNull TextView textView3,
-      @NonNull TextView textView7, @NonNull TextView textView9, @NonNull TextView txtBusNumber,
-      @NonNull TextView txtID, @NonNull TextView txtName, @NonNull View view2,
-      @NonNull View view3) {
+      @NonNull ImageView imgProfile, @NonNull FrameLayout mainContainer,
+      @NonNull RecyclerView rvPassengers, @NonNull Spinner spinner, @NonNull TextView textView,
+      @NonNull TextView textView1, @NonNull TextView textView11, @NonNull TextView textView15,
+      @NonNull TextView textView16, @NonNull TextView textView18, @NonNull TextView textView2,
+      @NonNull TextView textView20, @NonNull TextView textView3, @NonNull TextView textView7,
+      @NonNull TextView textView9, @NonNull TextView txtBusNumber, @NonNull TextView txtID,
+      @NonNull TextView txtName, @NonNull View view2, @NonNull View view3) {
     this.rootView = rootView;
     this.btnProfile = btnProfile;
     this.btnScanner = btnScanner;
@@ -125,6 +129,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.imageView4 = imageView4;
     this.imageView5 = imageView5;
     this.imgProfile = imgProfile;
+    this.mainContainer = mainContainer;
     this.rvPassengers = rvPassengers;
     this.spinner = spinner;
     this.textView = textView;
@@ -147,7 +152,7 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public FrameLayout getRoot() {
     return rootView;
   }
 
@@ -225,6 +230,8 @@ public final class ActivityMainBinding implements ViewBinding {
       if (imgProfile == null) {
         break missingId;
       }
+
+      FrameLayout mainContainer = (FrameLayout) rootView;
 
       id = R.id.rvPassengers;
       RecyclerView rvPassengers = ViewBindings.findChildViewById(rootView, id);
@@ -334,11 +341,11 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, btnProfile, btnScanner,
+      return new ActivityMainBinding((FrameLayout) rootView, btnProfile, btnScanner,
           constraintLayout, constraintLayout5, imageView2, imageView3, imageView4, imageView5,
-          imgProfile, rvPassengers, spinner, textView, textView1, textView11, textView15,
-          textView16, textView18, textView2, textView20, textView3, textView7, textView9,
-          txtBusNumber, txtID, txtName, view2, view3);
+          imgProfile, mainContainer, rvPassengers, spinner, textView, textView1, textView11,
+          textView15, textView16, textView18, textView2, textView20, textView3, textView7,
+          textView9, txtBusNumber, txtID, txtName, view2, view3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

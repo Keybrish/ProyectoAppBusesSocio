@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/socio"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppBusesDriver"
+        android:theme="@style/AppBusesDriver"
         tools:targetApi="31">
         <activity
             android:name=".ChangePasswordActivity"

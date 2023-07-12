@@ -47,7 +47,7 @@
         android:roundIcon="@drawable/socio"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.AppBusesDriver" >
+        android:theme="@style/AppBusesDriver" >
         <activity
             android:name="dev.android.appbusesdriver.ChangePasswordActivity"
             android:exported="false" >

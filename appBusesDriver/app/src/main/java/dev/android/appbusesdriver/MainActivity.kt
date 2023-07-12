@@ -1,14 +1,17 @@
 package dev.android.appbusesdriver
 
 import android.R
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.Window
 import android.widget.ArrayAdapter
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,10 +19,7 @@ import com.google.zxing.integration.android.IntentIntegrator
 import com.squareup.picasso.Picasso
 import dev.android.appbusesdriver.database.api
 import dev.android.appbusesdriver.databinding.ActivityMainBinding
-import dev.android.appbusesdriver.models.Bus
-import dev.android.appbusesdriver.models.Detalle_Compra
-import dev.android.appbusesdriver.models.Horarios
-import dev.android.appbusesdriver.models.Usuario
+import dev.android.appbusesdriver.models.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Retrofit
@@ -32,15 +32,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var user : Usuario
     private var id_venta = 0
     val op = mutableListOf<String>()
+    private var passgs: List<Frecuencia>? = null
+    private var date = "2023-07-11"
+    var id_viaje = 0
     private val adapter: PassengersAdapter by lazy{
         PassengersAdapter()
     }
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         bundle = intent.extras!!
@@ -86,6 +89,7 @@ class MainActivity : AppCompatActivity() {
                             for (element in horarios){
                                 op.add(element.hora_salida_viaje.substring(0,5))
                             }
+                            date = horarios[0].fecha_viaje
                             val sp = ArrayAdapter(this@MainActivity, R.layout.simple_spinner_item, op)
                             binding.spinner.adapter = sp
                         }
@@ -115,15 +119,15 @@ class MainActivity : AppCompatActivity() {
                         val pasajeros = response.body()
                         val passengers = pasajeros as MutableList<Detalle_Compra>
                         Log.d("Respuesta", passengers.toString())
-                        if (pasajeros != null) {
+                        if (pasajeros != null && pasajeros.isNotEmpty()) {
                             adapter.pasajero = pasajeros
                             adapter.notifyDataSetChanged()
+                        } else {
+                            adapter.pasajero = emptyList()
                         }
                     } else {
-                        // Manejar el caso de respuesta no exitosa
-                        Toast.makeText(this@MainActivity, "No existen elementos", Toast.LENGTH_SHORT).show()
+                        adapter.pasajero = emptyList()
                     }
-
                 }
             }
         )
@@ -151,6 +155,74 @@ class MainActivity : AppCompatActivity() {
                         Log.d("Respuesta", numero.toString())
                         if (numero != null) {
                             binding.txtBusNumber.text = numero.numero_bus.toString()
+                            getIdTrip(binding.spinner.selectedItem.toString(), date, numero.id_bus)
+                        }
+                    } else {
+                        // Manejar el caso de respuesta no exitosa
+                        Toast.makeText(this@MainActivity, "No existen elementos", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+            }
+        )
+        binding.rvPassengers.adapter = adapter
+        binding.rvPassengers.layoutManager = LinearLayoutManager(this)
+        binding.rvPassengers.setHasFixedSize(true)
+    }
+
+    fun getIdTrip(time: String, date: String, id_bus: Int){
+        val retrofitBuilder = Retrofit.Builder()
+            .baseUrl("https://nilotic-quart.000webhostapp.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(api::class.java)
+        val retrofit = retrofitBuilder.getIdTrip("$time:00", date, id_bus)
+        retrofit.enqueue(
+            object : Callback<Viaje> {
+                override fun onFailure(call: Call<Viaje>, t: Throwable) {
+                    Log.d("Agregar", t.message.toString())
+                }
+                override fun onResponse(call: Call<Viaje>, response: retrofit2.Response<Viaje> ) {
+                    if (response.isSuccessful) {
+                        val numero = response.body()
+                        Log.d("Respuesta", numero.toString())
+                        if (numero != null) {
+                            id_viaje = numero.id_viaje
+                            getPassengersTrip(id_viaje)
+                        }
+                    } else {
+                        // Manejar el caso de respuesta no exitosa
+                        Toast.makeText(this@MainActivity, "No existen elementos", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+            }
+        )
+        binding.rvPassengers.adapter = adapter
+        binding.rvPassengers.layoutManager = LinearLayoutManager(this)
+        binding.rvPassengers.setHasFixedSize(true)
+    }
+
+    fun getPassengersTrip(id_venta_pertenece: Int){
+        val retrofitBuilder = Retrofit.Builder()
+            .baseUrl("https://nilotic-quart.000webhostapp.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(api::class.java)
+        val retrofit = retrofitBuilder.getPassengersTrip(id_venta_pertenece)
+        retrofit.enqueue(
+            object : Callback<List<Frecuencia>> {
+                override fun onFailure(call: Call<List<Frecuencia>>, t: Throwable) {
+                    Log.d("Agregar", t.message.toString())
+                    Log.d("Socio", id_venta_pertenece.toString())
+                }
+                override fun onResponse(call: Call<List<Frecuencia>>, response: retrofit2.Response<List<Frecuencia>> ) {
+                    if (response.isSuccessful) {
+                        val pasajeros = response.body()
+                        Log.d("Respuesta", pasajeros.toString())
+                        if (pasajeros != null) {
+                            passgs = pasajeros
+                            Toast.makeText(this@MainActivity, "Información cargada", Toast.LENGTH_SHORT).show()
                         }
                     } else {
                         // Manejar el caso de respuesta no exitosa
@@ -216,11 +288,33 @@ class MainActivity : AppCompatActivity() {
             }else{
 //                Toast.makeText(this, "El valor escaneado es: ${result.contents}", Toast.LENGTH_SHORT).show()
                 id_venta = result.contents.toInt()
-                cargarDatosPasajeros(id_venta)
-                Toast.makeText(this, "$id_venta número", Toast.LENGTH_SHORT).show()
+
+                if (passgs != null) {
+                    for (i in passgs!!.indices){
+                        if (passgs!![i].id_venta_pertenece == id_venta) {
+                            adapter.pasajero = emptyList()
+                            cargarDatosPasajeros(id_venta)
+                            Toast.makeText(this, "$id_venta número", Toast.LENGTH_SHORT).show()
+                            break
+                        }
+                    }
+                } else {
+//                    Toast.makeText(this@MainActivity, "Pasajero no registrado", Toast.LENGTH_SHORT).show()
+                    showAlert()
+                }
             }
         } else {
+            Toast.makeText(this@MainActivity, "Pasajero no registrado", Toast.LENGTH_SHORT).show()
             super.onActivityResult(requestCode, resultCode, data)
         }
+    }
+
+    private fun showAlert() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Código no registrado.")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }

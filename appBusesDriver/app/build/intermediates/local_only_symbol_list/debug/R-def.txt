@@ -6,6 +6,7 @@ array com_google_android_gms_fonts_certs_prod
 array preloaded_fonts
 color black
 color gray
+color purp
 color purple
 color purple_200
 color purple_500
@@ -53,6 +54,7 @@ drawable image
 drawable less
 drawable plus
 drawable plus1
+drawable progress_bar
 drawable purple_aesthetic_woman_portrait_7h0yo10dvp884ons
 drawable socio
 drawable terminal_terrestre_quito
@@ -92,6 +94,7 @@ id imageView4
 id imageView5
 id imageView8
 id imgProfile
+id mainContainer
 id rvPassengers
 id spinner
 id textView
@@ -134,6 +137,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string project_id
+style AppBusesDriver
 style Theme.AppBusesDriver
 xml backup_rules
 xml data_extraction_rules

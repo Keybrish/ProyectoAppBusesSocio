@@ -5,8 +5,10 @@ import java.util.List;
 import dev.android.appbusesdriver.models.Bus;
 import dev.android.appbusesdriver.models.Contrasenia;
 import dev.android.appbusesdriver.models.Detalle_Compra;
+import dev.android.appbusesdriver.models.Frecuencia;
 import dev.android.appbusesdriver.models.Horarios;
 import dev.android.appbusesdriver.models.Usuario;
+import dev.android.appbusesdriver.models.Viaje;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -28,10 +30,14 @@ public interface api {
     Call<List<Detalle_Compra>> getPassengers(@Query("id_venta_pertenece") Integer id_venta_pertenece);
 
     @GET("obtenerIdViaje.php")
-    Call<List<Detalle_Compra>> getPassengers(@Query("hora_salida_viaje") String hora_salida_viaje,
-                                             @Query("fecha_viaje") String fecha_viaje);
+    Call<Viaje> getIdTrip(@Query("hora_salida_viaje") String hora_salida_viaje,
+                          @Query("fecha_viaje") String fecha_viaje,
+                          @Query("bus_viaje") Integer bus_viaje);
 
     @GET("obtenerNumBus.php")
     Call<Bus> getBusNumber(@Query("id_socio") Integer id_socio);
+
+    @GET("mostrarPasajerosViaje.php")
+    Call<List<Frecuencia>> getPassengersTrip(@Query("id_viaje") Integer id_viaje);
 }
 
