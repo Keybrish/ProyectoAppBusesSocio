@@ -54,5 +54,10 @@ public interface api {
                              @Field("apellido_usuario") String apellido_usuario,
                              @Field("telefono_usuario") String telefono_usuario,
                              @Field("foto_usuario") String foto_usuario);
+
+    @FormUrlEncoded
+    @POST("editarClaveUsuario.php")
+    Call<Usuario> updateUserPassword(@Field("id_usuario") Integer id_usuario,
+                                     @Field("clave_usuario") String clave_usuario);
 }
 
