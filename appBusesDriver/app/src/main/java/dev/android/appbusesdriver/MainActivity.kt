@@ -2,11 +2,14 @@ package dev.android.appbusesdriver
 
 import android.R
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -35,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     private var id_venta = 0
     val op = mutableListOf<String>()
     private var passgs: List<Frecuencia>? = null
-    private var date = "2023-07-11"
+    private var date = ""
     var id_viaje = 0
     private val adapter: PassengersAdapter by lazy{
         PassengersAdapter()
@@ -158,7 +161,7 @@ class MainActivity : AppCompatActivity() {
                         val numero = response.body()
                         Log.d("Respuesta", numero.toString())
                         if (numero != null) {
-                            binding.txtBusNumber.text = numero.numero_bus.toString()
+                            binding.txtBusNumber.text = "Bus asignado: ${numero.numero_bus}"
                             getIdTrip(binding.spinner.selectedItem.toString(), date, numero.id_bus)
                         }
                     } else {
@@ -280,10 +283,13 @@ class MainActivity : AppCompatActivity() {
         val integrator = IntentIntegrator(this)
         integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
         integrator.setPrompt("Escanear pasajero")
-        integrator.setOrientationLocked(false) // Agrega esta línea
+        integrator.setOrientationLocked(false)
+        integrator.setBeepEnabled(false) // Desactivar el sonido
         integrator.initiateScan()
     }
 
+
+    @RequiresApi(Build.VERSION_CODES.O)
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
@@ -291,9 +297,20 @@ class MainActivity : AppCompatActivity() {
             if(result.contents == null){
                 Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show()
             }else{
-//                Toast.makeText(this, "El valor escaneado es: ${result.contents}", Toast.LENGTH_SHORT).show()
-//                id_venta = result.contents.toInt()
-
+                // Obtener una instancia del Vibrator
+                val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                // Comprobar si el dispositivo tiene capacidad de vibración
+                if (vibrator.hasVibrator()) {
+                    // Duración de la vibración en milisegundos
+                    val vibrationDuration = 100L
+                    // Crear un efecto de vibración
+                    val vibrationEffect = VibrationEffect.createOneShot(
+                        vibrationDuration,
+                        VibrationEffect.DEFAULT_AMPLITUDE
+                    )
+                    // Vibrar con el efecto configurado
+                    vibrator.vibrate(vibrationEffect)
+                }
                 try {
                     id_venta = result.contents.toInt()
                     // Continuar con el código después de la conversión exitosa
@@ -323,11 +340,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 } catch (e: NumberFormatException) {
                     // Mostrar una alerta en caso de error de conversión
-                    AlertDialog.Builder(this)
-                        .setTitle("Error")
-                        .setMessage("Contenido no válido")
-                        .setPositiveButton("Aceptar", null)
-                        .show()
+                    showAlert()
                 }
             }
         } else {
@@ -350,5 +363,10 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         binding.btnActive.setColorFilter(ContextCompat.getColor(this, R.color.holo_red_dark))
         getUser(email)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
     }
 }
