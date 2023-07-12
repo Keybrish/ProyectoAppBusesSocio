@@ -9,11 +9,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.Window
 import android.widget.ArrayAdapter
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.zxing.integration.android.IntentIntegrator
 import com.squareup.picasso.Picasso
@@ -46,6 +48,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnActive.setColorFilter(ContextCompat.getColor(this, R.color.holo_red_dark))
+        binding.txtEmpty.visibility = View.GONE
         bundle = intent.extras!!
         email = bundle.getString("email").toString()
 
@@ -189,6 +193,8 @@ class MainActivity : AppCompatActivity() {
                         if (numero != null) {
                             id_viaje = numero.id_viaje
                             getPassengersTrip(id_viaje)
+                            binding.btnActive.setColorFilter(ContextCompat.getColor(this@MainActivity, R.color.holo_green_light))
+//                            Toast.makeText(this@MainActivity, "Información cargada", Toast.LENGTH_SHORT).show()
                         }
                     } else {
                         // Manejar el caso de respuesta no exitosa
@@ -222,7 +228,6 @@ class MainActivity : AppCompatActivity() {
                         Log.d("Respuesta", pasajeros.toString())
                         if (pasajeros != null) {
                             passgs = pasajeros
-                            Toast.makeText(this@MainActivity, "Información cargada", Toast.LENGTH_SHORT).show()
                         }
                     } else {
                         // Manejar el caso de respuesta no exitosa
@@ -287,20 +292,42 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show()
             }else{
 //                Toast.makeText(this, "El valor escaneado es: ${result.contents}", Toast.LENGTH_SHORT).show()
-                id_venta = result.contents.toInt()
+//                id_venta = result.contents.toInt()
 
-                if (passgs != null) {
-                    for (i in passgs!!.indices){
-                        if (passgs!![i].id_venta_pertenece == id_venta) {
-                            adapter.pasajero = emptyList()
-                            cargarDatosPasajeros(id_venta)
-                            Toast.makeText(this, "$id_venta número", Toast.LENGTH_SHORT).show()
-                            break
+                try {
+                    id_venta = result.contents.toInt()
+                    // Continuar con el código después de la conversión exitosa
+
+                    var vacio = true
+                    if (passgs != null) {
+                        for (i in passgs!!.indices){
+                            if (passgs!![i].id_venta_pertenece == id_venta) {
+                                binding.txtEmpty.visibility = View.GONE
+                                adapter.pasajero = emptyList()
+                                cargarDatosPasajeros(id_venta)
+//                                Toast.makeText(this, "Número $id_venta", Toast.LENGTH_SHORT).show()
+                                vacio = false
+                                break
+                            }
                         }
-                    }
-                } else {
+                    } else {
 //                    Toast.makeText(this@MainActivity, "Pasajero no registrado", Toast.LENGTH_SHORT).show()
-                    showAlert()
+                        showAlert()
+                    }
+
+                    if (vacio) {
+                        adapter.pasajero = emptyList()
+                        adapter.notifyDataSetChanged()
+                        binding.txtEmpty.visibility = View.VISIBLE
+//                    Toast.makeText(this@MainActivity, "En esta venta no hay pasajeros registrados", Toast.LENGTH_SHORT).show()
+                    }
+                } catch (e: NumberFormatException) {
+                    // Mostrar una alerta en caso de error de conversión
+                    AlertDialog.Builder(this)
+                        .setTitle("Error")
+                        .setMessage("Contenido no válido")
+                        .setPositiveButton("Aceptar", null)
+                        .show()
                 }
             }
         } else {
@@ -316,5 +343,12 @@ class MainActivity : AppCompatActivity() {
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onResume() {
+        super.onResume()
+        binding.btnActive.setColorFilter(ContextCompat.getColor(this, R.color.holo_red_dark))
+        getUser(email)
     }
 }

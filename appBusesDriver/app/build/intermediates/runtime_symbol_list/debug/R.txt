@@ -3284,6 +3284,7 @@ int id browser_actions_menu_item_icon 0x7f0a0067
 int id browser_actions_menu_item_text 0x7f0a0068
 int id browser_actions_menu_items 0x7f0a0069
 int id browser_actions_menu_view 0x7f0a006a
+int id btnActive 0x7f0a024b
 int id btnBack 0x7f0a006b
 int id btnChangePassword 0x7f0a006c
 int id btnEditInfo 0x7f0a006d
@@ -3433,7 +3434,6 @@ int id ignoreRequest 0x7f0a00fc
 int id image 0x7f0a00fd
 int id imageView 0x7f0a00fe
 int id imageView2 0x7f0a00ff
-int id imageView3 0x7f0a0100
 int id imageView4 0x7f0a0101
 int id imageView5 0x7f0a0102
 int id imageView8 0x7f0a0103
@@ -3721,6 +3721,7 @@ int id transition_scene_layoutid_cache 0x7f0a021c
 int id transition_transform 0x7f0a021d
 int id triangle 0x7f0a021e
 int id txtBusNumber 0x7f0a021f
+int id txtEmpty 0x7f0a024a
 int id txtID 0x7f0a0220
 int id txtName 0x7f0a0221
 int id txtSeat 0x7f0a0222

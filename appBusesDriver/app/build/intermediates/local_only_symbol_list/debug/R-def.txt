@@ -65,6 +65,7 @@ drawable undraw_travel_plans_re_103r
 drawable undraw_travelers_re_y25a
 font roboto_bold
 font roboto_regular
+id btnActive
 id btnBack
 id btnChangePassword
 id btnEditInfo
@@ -89,7 +90,6 @@ id editTextTextPersonName6
 id editTextTextPersonName7
 id imageView
 id imageView2
-id imageView3
 id imageView4
 id imageView5
 id imageView8
@@ -115,6 +115,7 @@ id textView5
 id textView7
 id textView9
 id txtBusNumber
+id txtEmpty
 id txtID
 id txtName
 id txtSeat

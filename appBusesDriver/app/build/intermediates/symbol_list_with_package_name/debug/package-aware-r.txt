@@ -3285,6 +3285,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnActive
 id btnBack
 id btnChangePassword
 id btnEditInfo
@@ -3434,7 +3435,6 @@ id ignoreRequest
 id image
 id imageView
 id imageView2
-id imageView3
 id imageView4
 id imageView5
 id imageView8
@@ -3722,6 +3722,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id txtBusNumber
+id txtEmpty
 id txtID
 id txtName
 id txtSeat
