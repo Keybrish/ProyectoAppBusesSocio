@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.FrameLayout
 import android.widget.Toast
@@ -56,6 +57,16 @@ class MainActivity : AppCompatActivity() {
         op.add("Sin horarios")
         val sp = ArrayAdapter(this@MainActivity, R.layout.simple_spinner_item, op)
         binding.spinner.adapter = sp
+
+        binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                getDestination(binding.spinner.selectedItem.toString(), date)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Manejar el caso en que no se haya seleccionado nada
+            }
+        }
 
         binding.btnProfile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java).apply {
@@ -158,7 +169,7 @@ class MainActivity : AppCompatActivity() {
                         val numero = response.body()
                         Log.d("Respuesta", numero.toString())
                         if (numero != null) {
-                            binding.txtBusNumber.text = numero.numero_bus.toString()
+                            binding.txtBusNumber.text = "Bus asignado: ${numero.numero_bus.toString()}"
                             getIdTrip(binding.spinner.selectedItem.toString(), date, numero.id_bus)
                         }
                     } else {
@@ -182,17 +193,17 @@ class MainActivity : AppCompatActivity() {
             .create(api::class.java)
         val retrofit = retrofitBuilder.getDestination(date, time)
         retrofit.enqueue(
-            object : Callback<Destino> {
-                override fun onFailure(call: Call<Destino>, t: Throwable) {
+            object : Callback<List<Destino>> {
+                override fun onFailure(call: Call<List<Destino>>, t: Throwable) {
                     Log.d("Agregar", t.message.toString())
-                    Toast.makeText(this@MainActivity, "Falla", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this@MainActivity, "Falla", Toast.LENGTH_SHORT).show()
                 }
-                override fun onResponse(call: Call<Destino>, response: retrofit2.Response<Destino> ) {
+                override fun onResponse(call: Call<List<Destino>>, response: retrofit2.Response<List<Destino>> ) {
                     if (response.isSuccessful) {
                         val destino = response.body()
                         Log.d("Respuesta", destino.toString())
                         if (destino != null) {
-                            binding.txtDestination.text = "${destino.nombre_ciudad}, ${destino.nombre_provincia}"
+                            binding.txtDestination.text = "${destino[0].nombre_ciudad}, ${destino[0].nombre_provincia}"
 //                            Toast.makeText(this@MainActivity, "Wii", Toast.LENGTH_SHORT).show()
                         }
                     } else {

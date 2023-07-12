@@ -42,7 +42,7 @@ public interface api {
     Call<List<Frecuencia>> getPassengersTrip(@Query("id_viaje") Integer id_viaje);
 
     @GET("obtenerDestinoHora.php")
-    Call<Destino> getDestination(@Query("fecha_viaje") String fecha_viaje,
+    Call<List<Destino>> getDestination(@Query("fecha_viaje") String fecha_viaje,
                                  @Query("hora_salida_viaje") String hora_salida_viaje);
 
     @FormUrlEncoded
