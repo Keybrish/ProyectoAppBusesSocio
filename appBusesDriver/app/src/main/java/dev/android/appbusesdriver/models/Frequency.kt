@@ -45,3 +45,8 @@ data class Frecuencia (
     val cedula_pasajero: String,
     val total_detalle: Float
 ): Serializable
+
+data class Destino (
+    val nombre_ciudad: String,
+    val nombre_provincia: String
+): Serializable

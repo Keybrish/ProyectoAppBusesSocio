@@ -3290,6 +3290,7 @@ id btnBack
 id btnChangePassword
 id btnEditInfo
 id btnFrequency
+id btnInfo
 id btnLogin
 id btnLogout
 id btnNext
@@ -3437,7 +3438,6 @@ id imageView
 id imageView2
 id imageView4
 id imageView5
-id imageView8
 id imgProfile
 id immediateStop
 id included
@@ -3681,7 +3681,6 @@ id textStart
 id textTop
 id textView
 id textView1
-id textView10
 id textView11
 id textView12
 id textView13
@@ -3695,7 +3694,6 @@ id textView3
 id textView30
 id textView5
 id textView7
-id textView9
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3722,7 +3720,9 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id txtBusNumber
+id txtDestination
 id txtEmpty
+id txtFullName
 id txtID
 id txtName
 id txtSeat

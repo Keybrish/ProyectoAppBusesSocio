@@ -4,6 +4,7 @@ import java.util.List;
 
 import dev.android.appbusesdriver.models.Bus;
 import dev.android.appbusesdriver.models.Contrasenia;
+import dev.android.appbusesdriver.models.Destino;
 import dev.android.appbusesdriver.models.Detalle_Compra;
 import dev.android.appbusesdriver.models.Frecuencia;
 import dev.android.appbusesdriver.models.Horarios;
@@ -39,5 +40,19 @@ public interface api {
 
     @GET("mostrarPasajerosViaje.php")
     Call<List<Frecuencia>> getPassengersTrip(@Query("id_viaje") Integer id_viaje);
+
+    @GET("obtenerDestinoHora.php")
+    Call<Destino> getDestination(@Query("fecha_viaje") String fecha_viaje,
+                                 @Query("hora_salida_viaje") String hora_salida_viaje);
+
+    @FormUrlEncoded
+    @POST("editarPerfilPasajero.php")
+    Call<Usuario> updateUser(@Field("id_usuario") Integer id_usuario,
+                             @Field("email_usuario") String email_usuario,
+//                             @Field("tipo_usuario") String tipo_usuario,
+                             @Field("nombre_usuario") String nombre_usuario,
+                             @Field("apellido_usuario") String apellido_usuario,
+                             @Field("telefono_usuario") String telefono_usuario,
+                             @Field("foto_usuario") String foto_usuario);
 }
 

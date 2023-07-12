@@ -19,6 +19,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.zxing.integration.android.IntentIntegrator
 import com.squareup.picasso.Picasso
+import dev.android.appbuses.ProfileActivity
 import dev.android.appbusesdriver.database.api
 import dev.android.appbusesdriver.databinding.ActivityMainBinding
 import dev.android.appbusesdriver.models.*
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnProfile.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java).apply {
+                putExtras(bundle)
             }
             startActivity(intent)
         }
@@ -174,6 +176,40 @@ class MainActivity : AppCompatActivity() {
         binding.rvPassengers.setHasFixedSize(true)
     }
 
+    fun getDestination(time: String, date: String){
+        val retrofitBuilder = Retrofit.Builder()
+            .baseUrl("https://nilotic-quart.000webhostapp.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(api::class.java)
+        val retrofit = retrofitBuilder.getDestination(date, time)
+        retrofit.enqueue(
+            object : Callback<Destino> {
+                override fun onFailure(call: Call<Destino>, t: Throwable) {
+                    Log.d("Agregar", t.message.toString())
+                    Toast.makeText(this@MainActivity, "Falla", Toast.LENGTH_SHORT).show()
+                }
+                override fun onResponse(call: Call<Destino>, response: retrofit2.Response<Destino> ) {
+                    if (response.isSuccessful) {
+                        val destino = response.body()
+                        Log.d("Respuesta", destino.toString())
+                        if (destino != null) {
+                            binding.txtDestination.text = "${destino.nombre_ciudad}, ${destino.nombre_provincia}"
+                            Toast.makeText(this@MainActivity, "Wii", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        // Manejar el caso de respuesta no exitosa
+                        Toast.makeText(this@MainActivity, "No existen elementos", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+            }
+        )
+        binding.rvPassengers.adapter = adapter
+        binding.rvPassengers.layoutManager = LinearLayoutManager(this)
+        binding.rvPassengers.setHasFixedSize(true)
+    }
+
     fun getIdTrip(time: String, date: String, id_bus: Int){
         val retrofitBuilder = Retrofit.Builder()
             .baseUrl("https://nilotic-quart.000webhostapp.com/")
@@ -193,6 +229,7 @@ class MainActivity : AppCompatActivity() {
                         if (numero != null) {
                             id_viaje = numero.id_viaje
                             getPassengersTrip(id_viaje)
+                            getDestination(binding.spinner.selectedItem.toString(), date)
                             binding.btnActive.setColorFilter(ContextCompat.getColor(this@MainActivity, R.color.holo_green_light))
 //                            Toast.makeText(this@MainActivity, "Información cargada", Toast.LENGTH_SHORT).show()
                         }

@@ -32,6 +32,9 @@ public final class ActivityProfileBinding implements ViewBinding {
   public final ImageView btnEditInfo;
 
   @NonNull
+  public final ImageView btnInfo;
+
+  @NonNull
   public final Button btnLogout;
 
   @NonNull
@@ -44,16 +47,7 @@ public final class ActivityProfileBinding implements ViewBinding {
   public final ConstraintLayout constraintLayout4;
 
   @NonNull
-  public final ImageView imageView8;
-
-  @NonNull
   public final ImageView imgProfile;
-
-  @NonNull
-  public final TextView textView10;
-
-  @NonNull
-  public final TextView textView12;
 
   @NonNull
   public final TextView textView13;
@@ -61,26 +55,32 @@ public final class ActivityProfileBinding implements ViewBinding {
   @NonNull
   public final TextView textView14;
 
+  @NonNull
+  public final TextView txtFullName;
+
+  @NonNull
+  public final TextView txtName;
+
   private ActivityProfileBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnBack,
       @NonNull ImageView btnChangePassword, @NonNull ImageView btnEditInfo,
-      @NonNull Button btnLogout, @NonNull CardView btnProfile, @NonNull CardView btnProfile2,
-      @NonNull ConstraintLayout constraintLayout4, @NonNull ImageView imageView8,
-      @NonNull ImageView imgProfile, @NonNull TextView textView10, @NonNull TextView textView12,
-      @NonNull TextView textView13, @NonNull TextView textView14) {
+      @NonNull ImageView btnInfo, @NonNull Button btnLogout, @NonNull CardView btnProfile,
+      @NonNull CardView btnProfile2, @NonNull ConstraintLayout constraintLayout4,
+      @NonNull ImageView imgProfile, @NonNull TextView textView13, @NonNull TextView textView14,
+      @NonNull TextView txtFullName, @NonNull TextView txtName) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnChangePassword = btnChangePassword;
     this.btnEditInfo = btnEditInfo;
+    this.btnInfo = btnInfo;
     this.btnLogout = btnLogout;
     this.btnProfile = btnProfile;
     this.btnProfile2 = btnProfile2;
     this.constraintLayout4 = constraintLayout4;
-    this.imageView8 = imageView8;
     this.imgProfile = imgProfile;
-    this.textView10 = textView10;
-    this.textView12 = textView12;
     this.textView13 = textView13;
     this.textView14 = textView14;
+    this.txtFullName = txtFullName;
+    this.txtName = txtName;
   }
 
   @Override
@@ -128,6 +128,12 @@ public final class ActivityProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnInfo;
+      ImageView btnInfo = ViewBindings.findChildViewById(rootView, id);
+      if (btnInfo == null) {
+        break missingId;
+      }
+
       id = R.id.btnLogout;
       Button btnLogout = ViewBindings.findChildViewById(rootView, id);
       if (btnLogout == null) {
@@ -152,27 +158,9 @@ public final class ActivityProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView8;
-      ImageView imageView8 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView8 == null) {
-        break missingId;
-      }
-
       id = R.id.imgProfile;
       ImageView imgProfile = ViewBindings.findChildViewById(rootView, id);
       if (imgProfile == null) {
-        break missingId;
-      }
-
-      id = R.id.textView10;
-      TextView textView10 = ViewBindings.findChildViewById(rootView, id);
-      if (textView10 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView12;
-      TextView textView12 = ViewBindings.findChildViewById(rootView, id);
-      if (textView12 == null) {
         break missingId;
       }
 
@@ -188,9 +176,21 @@ public final class ActivityProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.txtFullName;
+      TextView txtFullName = ViewBindings.findChildViewById(rootView, id);
+      if (txtFullName == null) {
+        break missingId;
+      }
+
+      id = R.id.txtName;
+      TextView txtName = ViewBindings.findChildViewById(rootView, id);
+      if (txtName == null) {
+        break missingId;
+      }
+
       return new ActivityProfileBinding((ConstraintLayout) rootView, btnBack, btnChangePassword,
-          btnEditInfo, btnLogout, btnProfile, btnProfile2, constraintLayout4, imageView8,
-          imgProfile, textView10, textView12, textView13, textView14);
+          btnEditInfo, btnInfo, btnLogout, btnProfile, btnProfile2, constraintLayout4, imgProfile,
+          textView13, textView14, txtFullName, txtName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

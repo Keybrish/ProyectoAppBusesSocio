@@ -70,6 +70,7 @@ id btnBack
 id btnChangePassword
 id btnEditInfo
 id btnFrequency
+id btnInfo
 id btnLogin
 id btnLogout
 id btnNext
@@ -92,14 +93,12 @@ id imageView
 id imageView2
 id imageView4
 id imageView5
-id imageView8
 id imgProfile
 id mainContainer
 id rvPassengers
 id spinner
 id textView
 id textView1
-id textView10
 id textView11
 id textView12
 id textView13
@@ -113,9 +112,10 @@ id textView3
 id textView30
 id textView5
 id textView7
-id textView9
 id txtBusNumber
+id txtDestination
 id txtEmpty
+id txtFullName
 id txtID
 id txtName
 id txtSeat

@@ -91,10 +91,10 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView textView7;
 
   @NonNull
-  public final TextView textView9;
+  public final TextView txtBusNumber;
 
   @NonNull
-  public final TextView txtBusNumber;
+  public final TextView txtDestination;
 
   @NonNull
   public final TextView txtEmpty;
@@ -120,7 +120,7 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull TextView textView1, @NonNull TextView textView11, @NonNull TextView textView15,
       @NonNull TextView textView16, @NonNull TextView textView18, @NonNull TextView textView2,
       @NonNull TextView textView20, @NonNull TextView textView3, @NonNull TextView textView7,
-      @NonNull TextView textView9, @NonNull TextView txtBusNumber, @NonNull TextView txtEmpty,
+      @NonNull TextView txtBusNumber, @NonNull TextView txtDestination, @NonNull TextView txtEmpty,
       @NonNull TextView txtID, @NonNull TextView txtName, @NonNull View view2,
       @NonNull View view3) {
     this.rootView = rootView;
@@ -146,8 +146,8 @@ public final class ActivityMainBinding implements ViewBinding {
     this.textView20 = textView20;
     this.textView3 = textView3;
     this.textView7 = textView7;
-    this.textView9 = textView9;
     this.txtBusNumber = txtBusNumber;
+    this.txtDestination = txtDestination;
     this.txtEmpty = txtEmpty;
     this.txtID = txtID;
     this.txtName = txtName;
@@ -310,15 +310,15 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView9;
-      TextView textView9 = ViewBindings.findChildViewById(rootView, id);
-      if (textView9 == null) {
-        break missingId;
-      }
-
       id = R.id.txtBusNumber;
       TextView txtBusNumber = ViewBindings.findChildViewById(rootView, id);
       if (txtBusNumber == null) {
+        break missingId;
+      }
+
+      id = R.id.txtDestination;
+      TextView txtDestination = ViewBindings.findChildViewById(rootView, id);
+      if (txtDestination == null) {
         break missingId;
       }
 
@@ -355,8 +355,8 @@ public final class ActivityMainBinding implements ViewBinding {
       return new ActivityMainBinding((FrameLayout) rootView, btnActive, btnProfile, btnScanner,
           constraintLayout, constraintLayout5, imageView2, imageView4, imageView5, imgProfile,
           mainContainer, rvPassengers, spinner, textView, textView1, textView11, textView15,
-          textView16, textView18, textView2, textView20, textView3, textView7, textView9,
-          txtBusNumber, txtEmpty, txtID, txtName, view2, view3);
+          textView16, textView18, textView2, textView20, textView3, textView7, txtBusNumber,
+          txtDestination, txtEmpty, txtID, txtName, view2, view3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
